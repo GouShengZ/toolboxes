@@ -1,0 +1,39 @@
+server:
+  port: 8080
+  mode: debug  # debug/release
+
+database:
+  driver: mysql
+  host: localhost
+  port: 3306
+  username: root
+  password: password
+  dbname: uul
+  charset: utf8mb4
+  max_idle_conns: 10
+  max_open_conns: 100
+  conn_max_lifetime: 3600
+
+log:
+  level: debug  # debug/info/warn/error
+  filename: ./logs/app.log
+  max_size: 100    # MB
+  max_age: 30      # days
+  max_backups: 10  # 最多保留多少个备份
+  compress: true   # 是否压缩
+
+jwt:
+  secret: your-secret-key
+  expire: 24       # hours
+
+email:
+  host: smtp.example.com
+  port: 587
+  username: your-email@example.com
+  password: your-password
+  from: your-email@example.com 
+
+ratelimit:
+  capacity: 100    # 令牌桶容量
+  rate: 10        # 每秒填充速率
+  enabled: true   # 是否启用限流
